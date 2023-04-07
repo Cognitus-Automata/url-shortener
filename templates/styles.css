@@ -1,0 +1,105 @@
+body{
+    background: linear-gradient(to right, rgb(145, 131, 201), rgb(63, 50, 119));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 50px;
+    position: sticky;
+}
+
+h1.title{
+    font-size: 100px;
+    font-weight: bold;
+    /* align it to the top of the page */
+    position:sticky;
+    top: 0;
+    left: 39%;
+    margin-top: 3px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: lighter;
+}
+
+.random_num{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    /* Declaring the font's specifications:  */
+}
+
+#button{
+    font-size: 60px;
+    font-weight: bold;
+    position: center;
+}
+
+input#url{
+    font-size: 25px;
+    font-weight: bold;
+    position: center;
+}
+
+input{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* i want to make the button's text centered */
+.button{
+    size: 50px;
+}
+
+.random_num{
+    font-size: 50px;
+    font-weight: bold;
+    /* i want to make the text centered */
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.about_pg {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+footer{
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* i want to make the image just behind of the footer's left */
+.image{
+    position: sticky;
+    left: 46%;
+    bottom: 0;
+    /* i want to stop the image from colliding with the text */
+    
+}
+
+/* i want the class named bottom-text to be bottom: 0 */
+.bottom-text{
+    position: sticky;
+    bottom: -10px;
+    /* i want to make it centered to the screen */
+    left: 50%;
+}
+
+a.bottom-text{
+    text-decoration: none;
+}
