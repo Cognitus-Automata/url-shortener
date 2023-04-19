@@ -71,7 +71,7 @@ def getURL(short : str):
         cursor.close()
         database.close()
         print (url[0])
-        return url
+        return url[0]
     except sqlite3.Error as error:
         print("Error while fetching short URL: ", error)
 

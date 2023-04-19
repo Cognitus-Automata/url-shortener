@@ -20,11 +20,11 @@ def shorten():
 
 # TODO Split the url
 # Get the short URL from the URL and redirect to the corresponding URL
-@app.route('/<short>')
-def redirectToURL():
+@app.route('/<string:short>')
+def redirectToURL(short):
     # Get the URL and split after the last /
     shortCode = request.url.split('/')[-1]
-    return redirect(getURL(shortCode))
+    return redirect("https://" + getURL(shortCode))
 
 
 
