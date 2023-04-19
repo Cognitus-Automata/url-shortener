@@ -4,16 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Codacity</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Oswald&display=swap" rel="stylesheet">
+    <title>Codacity - URL Shortener</title>
   </head>
   <body>
-    <h1>Hello World</h1>
 
-    <a href="/about">
-      About us?
-    </a>
-    <a href="/rnd">
-      Random number
-    </a>
+   <h1 class="title">Codacity</h1>
+
+    <div class="button-section">
+      <br>
+      <h1>URL Shortener</h1>
+        <form id="button" action="/shorten" method="POST">
+          <label for="url">Enter URL:
+            <br>
+          </label>
+            <input type="text" id="url" name="url" />
+          <input type="submit" value="Hello" />
+        </form>
+
+    <a class="about_pg" href="/about"> About Us </a>
+
+    </div>
+    <footer>
+      <a class="image" href="https://github.com/Cognitus-Automata" target="_blank"><img src="src/codacity-logo.png" width="50" height="50"></a>
+      <p class="bottom-text"> <a href="https://github.com/Cognitus-Automata" target="_blank">© 2021 Codacity</a></p>
+    </footer>
+    
   </body>
 </html>

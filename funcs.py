@@ -7,13 +7,11 @@ def getDb():
     try:
         connection = sqlite3.connect('test.db')
         cursor = connection.cursor()
-
         query = "select sqlite_version();"
         cursor.execute(query)
         record = cursor.fetchall()
         print("SQLite Database Version is: ", record)
         cursor.close()
-
         return connection
     except sqlite3.Error as error:
         print("Error while connecting to sqlite database: ", error)
@@ -45,6 +43,23 @@ def createRndStr():
         new += random.choice(chars)
     return new
 
+# Checks if the short URL has been used before
+def hasBeenUsed(short : str):
+    try:
+        database = getDb()
+        cursor = database.cursor()
+        cursor.execute("""SELECT short FROM test WHERE short = ?;""", (short,))
+        result = cursor.fetchone()
+        print("short URL fetched successfully")
+        cursor.close()
+        database.close()
+        if (result == None):
+            return False
+        else:
+            return True
+    except sqlite3.Error as error:
+        print("Error while fetching short URL: ", error)
+
 # Returns the URL that corresponds to the short URL
 def getURL(short : str):
     try: 
@@ -55,16 +70,19 @@ def getURL(short : str):
         print("short URL fetched successfully")
         cursor.close()
         database.close()
+        print (url[0])
         return url
     except sqlite3.Error as error:
         print("Error while fetching short URL: ", error)
 
-# Ccreates a new entry, inserts it into the database and returns the short URL
+# Creates a new entry, inserts it into the database and returns the short URL
 def createShort(url : str):
     try:
         database = getDb()
         cursor = database.cursor()
         short = createRndStr()
+        while (hasBeenUsed(short)):
+            short = createRndStr()
         tuple = (random.randint(1, 10000), url, short)
         cursor.execute("""INSERT INTO test
                        (id, url, short, created_at)
@@ -77,7 +95,7 @@ def createShort(url : str):
         database.close()
         return short
     except sqlite3.Error as error:
-        print("Error while inserting short URL", error)
+        print("Error while inserting short URL: ", error)
 
 # Function that gets everything from the database (for debugging use only)
 def getAll():

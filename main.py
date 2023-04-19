@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request,  redirect
 from funcs import *
 
 app = Flask(__name__)
@@ -11,9 +11,22 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/rnd')
-def rnd():
-    return f"Your short URL is {createShort('https://www.google.com')}"
+@app.route('/shorten', methods=['GET', 'POST'])
+def shorten():
+    if request.method == 'POST':
+        url = request.form['url']
+    
+    return f"Your short URL is <a> 127.0.0.1:5000/{createShort(url)} </a>"
+
+# TODO Split the url
+# Get the short URL from the URL and redirect to the corresponding URL
+@app.route('/<short>')
+def redirectToURL():
+    # Get the URL and split after the last /
+    shortCode = request.url.split('/')[-1]
+    return redirect(getURL(shortCode))
+
+
 
 if __name__ == "__main__":
     createTable()
