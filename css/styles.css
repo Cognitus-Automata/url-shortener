@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    
 }
 
 .container {
@@ -11,6 +12,8 @@
     outline: dashed 1px black;
     /* Setup */
     position: relative;
+    border: none;
+    outline: none;
 }
 .content {
     /* Center vertically and horizontally */

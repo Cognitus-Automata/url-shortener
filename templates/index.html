@@ -5,18 +5,16 @@
 {% endblock %}
 
 {% block body %} 
-<h1> Hello </h1>
 <div class="container">
-  <div class="content">
+  <h1> URL Shortener </h1>
+  <div class="mb-3">
 
-    <form action="" method="post" >
+    <form action="/getshort" method="post" >
       <div class="input">
         
-        <label for="" class="url">Enter your URL</label>
+        <label for="" class="url">Short your URL HERE!</label>
         <input type="text" class="url" name="url">
-      </div>
-      <div class="submit">
-        <input type="submit" value="Make it Short!">
+        <input type="submit" value="Make it Short!" onclick="" >
       </div>
     </form>
   </div>
